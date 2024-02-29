@@ -15,7 +15,7 @@ exports.seed = async function (knex) {
 	let options = {};
 	let page = 1;
 
-	while (page <= 20) {
+	while (page <= 25) {
 		topUrl = TOP_URL + page.toString();
 		options = {
 			method: 'GET',
@@ -64,6 +64,7 @@ exports.seed = async function (knex) {
 										duration: movieData.runtime,
 										director,
 										about: movieData.overview,
+										tagline: movieData.tagline,
 										budget: movieData.budget,
 										revenue: movieData.revenue,
 										poster:
@@ -84,6 +85,8 @@ exports.seed = async function (knex) {
 						duration: 142,
 						director: 'Frank Darabont',
 						about: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+						tagline:
+							'Fear can hold you prisoner. Hope can set you free.',
 						budget: 25000000,
 						revenue: 28341469,
 						poster: 'https://example.com/posters/shawshank.jpg',
@@ -94,6 +97,7 @@ exports.seed = async function (knex) {
 						duration: 175,
 						director: 'Francis Ford Coppola',
 						about: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
+						tagline: "An offer you can't refuse.",
 						budget: 6000000,
 						revenue: 245066411,
 						poster: 'https://example.com/posters/godfather.jpg',
@@ -104,6 +108,7 @@ exports.seed = async function (knex) {
 						duration: 152,
 						director: 'Christopher Nolan',
 						about: 'When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.',
+						tagline: 'Why so serious?',
 						budget: 185000000,
 						revenue: 1004558444,
 						poster: 'https://example.com/posters/dark_knight.jpg',
@@ -114,6 +119,8 @@ exports.seed = async function (knex) {
 						duration: 96,
 						director: 'Sidney Lumet',
 						about: 'A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.',
+						tagline:
+							'Life is in their hands. Death is on their minds.',
 						budget: 350000,
 						revenue: 1000000,
 						poster: 'https://example.com/posters/12_angry_men.jpg',
@@ -124,6 +131,8 @@ exports.seed = async function (knex) {
 						duration: 195,
 						director: 'Steven Spielberg',
 						about: 'In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.',
+						tagline:
+							'Whoever saves one life, saves the world entire.',
 						budget: 22000000,
 						revenue: 321365567,
 						poster: 'https://example.com/posters/schindlers_list.jpg',

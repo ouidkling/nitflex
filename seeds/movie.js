@@ -57,13 +57,13 @@ exports.seed = async function (knex) {
 												person.job === 'Director'
 										).name ?? 'Unknown';
 									movies.push({
-										title: movieData.title,
-										release: new Date(
-											movieData.release_date
-										),
+										title: movieData.title ?? 'Unknown',
+										release:
+											new Date(movieData.release_date) ??
+											new Date(0),
 										duration: movieData.runtime,
 										director,
-										about: movieData.overview,
+										about: movieData.overview ?? 'Unknown',
 										tagline: movieData.tagline,
 										budget: movieData.budget,
 										revenue: movieData.revenue,
@@ -142,6 +142,7 @@ exports.seed = async function (knex) {
 			});
 		page++;
 	}
+
 	return knex('movie')
 		.del()
 		.then(() => {

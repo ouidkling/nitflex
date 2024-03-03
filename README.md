@@ -66,3 +66,5 @@ Movie data sourced from [The Movie Database API](https://www.themoviedb.org/).
 Your contributions are welcome! If you have suggestions to improve NITFLEX, please fork the repo and create a pull request or open an issue with your ideas.
 
 **Created by [Ouidkling](https://youtu.be/xvFZjo5PgG0?si=YCTWLjM8gJcAGQkU)**
+
+_Find the project report [here](https://ouidkling.notion.site/Rapport-NITFLEX-49fbc243519b47bbbbb7096aff35470b?pvs=4)!_

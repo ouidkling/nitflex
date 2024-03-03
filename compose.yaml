@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  hapi-mysql:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    restart: always
+
+  hapi-rabbitmq:
+    image: rabbitmq:3.13-management
+    ports:
+      - "${AMQP_PORT}:5672"
+      - "${AMQP_UI_PORT}:15672"
+    restart: always
+
+volumes:
+    db-data:

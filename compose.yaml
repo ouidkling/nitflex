@@ -17,8 +17,8 @@ services:
   hapi-rabbitmq:
     image: rabbitmq:3.13-management
     ports:
-      - "${AMQP_PORT}:5672"
-      - "${AMQP_UI_PORT}:15672"
+      - "${MB_PORT}:5672"
+      - "${MB_UI_PORT}:15672"
     restart: always
 
 volumes:

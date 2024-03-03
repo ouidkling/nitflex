@@ -1,0 +1,36 @@
+services:
+  hapi-app:
+    build:
+      context: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000:3000
+    depends_on:
+      hapi-mysql:
+       condition: service_healthy
+
+  hapi-mysql:
+    image: mysql:8
+    restart: always
+    command: ["--default-authentication-plugin=mysql_native_password", "--sql_mode="]
+#    env_file:
+#      - ./server/.env
+    environment:
+      MYSQL_USER: temmie
+      MYSQL_PASSWORD: hapi
+      MYSQL_ROOT_PASSWORD: hapi
+      MYSQL_DATABASE: nitflex
+    ports:
+      - "3308:3306"
+    volumes:
+      - nitflex-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  nitflex-data:
+
